@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -141,7 +141,7 @@ class Logger implements LoggerInterface
      * @param callable[]         $processors Optional array of processors
      * @param DateTimeZone       $timezone   Optional timezone, if not provided date_default_timezone_get() will be used
      */
-    public function __construct(string $name, array $handlers = [], array $processors = [], DateTimeZone $timezone = null)
+    public function __construct(string $name, array $handlers = [], array $processors = [], ?DateTimeZone $timezone = null)
     {
         $this->name = $name;
         $this->handlers = $handlers;
@@ -217,7 +217,7 @@ class Logger implements LoggerInterface
     /**
      * Adds a processor on to the stack.
      */
-    public function pushProcessor(callable $callback): self
+    public function pushProcessor(mixed $callback): self
     {
         array_unshift($this->processors, $callback);
 
@@ -230,7 +230,7 @@ class Logger implements LoggerInterface
      * @throws \LogicException If empty processor stack
      * @return callable
      */
-    public function popProcessor(): callable
+    public function popProcessor(): mixed
     {
         if (!$this->processors) {
             throw new \LogicException('You tried to pop from an empty processor stack.');

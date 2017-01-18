@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -53,7 +53,7 @@ class GelfMessageFormatter extends NormalizerFormatter
         Logger::EMERGENCY => 0,
     ];
 
-    public function __construct(string $systemName = null, string $extraPrefix = null, string $contextPrefix = 'ctxt_')
+    public function __construct(?string $systemName = null, ?string $extraPrefix = null, string $contextPrefix = 'ctxt_')
     {
         parent::__construct('U.u');
 

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -41,6 +41,6 @@ class DoctrineCouchDBHandler extends AbstractProcessingHandler
 
     protected function getDefaultFormatter(): FormatterInterface
     {
-        return new NormalizerFormatter;
+        return new NormalizerFormatter();
     }
 }

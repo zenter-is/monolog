@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -47,7 +47,7 @@ class LogstashFormatter extends NormalizerFormatter
      * @param string $extraPrefix     prefix for extra keys inside logstash "fields"
      * @param string $contextPrefix   prefix for context keys inside logstash "fields", defaults to ctxt_
      */
-    public function __construct(string $applicationName, string $systemName = null, string $extraPrefix = null, string $contextPrefix = 'ctxt_')
+    public function __construct(string $applicationName, ?string $systemName = null, ?string $extraPrefix = null, string $contextPrefix = 'ctxt_')
     {
         // logstash requires a ISO 8601 format date with optional millisecond precision.
         parent::__construct('Y-m-d\TH:i:s.uP');

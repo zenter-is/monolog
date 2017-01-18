@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -58,7 +58,7 @@ class DynamoDbHandler extends AbstractProcessingHandler
     {
         if (defined('Aws\Common\Aws::VERSION') && version_compare(Aws::VERSION, '3.0', '>=')) {
             $this->version = 3;
-            $this->marshaler = new Marshaler;
+            $this->marshaler = new Marshaler();
         } else {
             $this->version = 2;
         }

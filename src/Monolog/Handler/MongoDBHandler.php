@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -69,7 +69,7 @@ class MongoDBHandler extends AbstractProcessingHandler
         }
 
         if (isset($this->manager, $this->namespace)) {
-            $bulk = new BulkWrite;
+            $bulk = new BulkWrite();
             $bulk->insert($record["formatted"]);
             $this->manager->executeBulkWrite($this->namespace, $bulk);
         }
@@ -80,6 +80,6 @@ class MongoDBHandler extends AbstractProcessingHandler
      */
     protected function getDefaultFormatter(): FormatterInterface
     {
-        return new MongoDBFormatter;
+        return new MongoDBFormatter();
     }
 }

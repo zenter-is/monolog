@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?hh // decl declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -21,7 +21,7 @@ class DateTimeImmutable extends \DateTimeImmutable implements \JsonSerializable
 {
     private $useMicroseconds;
 
-    public function __construct($useMicroseconds, \DateTimeZone $timezone = null)
+    public function __construct($useMicroseconds, ?\DateTimeZone $timezone = null)
     {
         static $needsMicrosecondsHack = PHP_VERSION_ID < 70100;
 
