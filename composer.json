@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "hhvm": "^3.14",
+        "hhvm": "^3.12",
         "psr/log": "^1.0.1"
     },
     "require-dev": {
